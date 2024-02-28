@@ -13,6 +13,18 @@ main{
 .custom-card-bg{
     background-color: #102030;
 }
+.custom-card-bg-modal{
+    background-color: rgba(16, 32, 48, .9);
+}
+.modal-figure{
+    width: 330px;
+    aspect-ratio: 1;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+
+
 .my-max-w{
     max-width: 85%;
     margin: 0 auto;

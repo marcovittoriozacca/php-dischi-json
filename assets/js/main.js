@@ -4,8 +4,10 @@ createApp({
   data() {
     return {
       apiUrl: 'PHP/server.php',
-      discs: [], 
+      discs: [],
+      selectedDisc: [],
 
+      clicked: false,
     }
   },
   mounted() {
@@ -16,6 +18,15 @@ createApp({
     //eseguiamo la chiamata axios con metodo get per fare una richiesta al file server.php che ha preso e trasformato in array associativo gli elementi del file json
     getData(){
       axios.get(this.apiUrl).then( (r) => this.discs = r.data )
+    },
+
+    //esegue una chiamata axios al file json con tutti i dischi e seleziona soltanto quello il corrispettivo indice
+    getSingleDisc(index){
+      this.clicked = true;
+
+      if(index != null || index != undefined){
+        axios.get(this.apiUrl).then( (r) => this.selectedDisc = r.data[index] )
+      }
     }
   },
 }).mount('#app')
