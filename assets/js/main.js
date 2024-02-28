@@ -22,10 +22,10 @@ createApp({
 
     //esegue una chiamata axios al file json con tutti i dischi e seleziona soltanto quello il corrispettivo indice
     getSingleDisc(index){
-      this.clicked = true;
-
-      if(index != null || index != undefined){
-        axios.get(this.apiUrl, {params: {discIndex:  index} }).then( (r) => this.selectedDisc = r.data )
+      if(index >= 0){
+        this.selectedDisc = [];
+        this.clicked = true;
+          axios.get(this.apiUrl, {params: {discIndex:  index} }).then( (r) => this.selectedDisc = r.data )
       }
     }
   },
