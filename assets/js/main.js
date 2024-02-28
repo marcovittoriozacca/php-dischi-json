@@ -25,7 +25,7 @@ createApp({
       this.clicked = true;
 
       if(index != null || index != undefined){
-        axios.get(this.apiUrl).then( (r) => this.selectedDisc = r.data[index] )
+        axios.get(this.apiUrl, {params: {discIndex:  index} }).then( (r) => this.selectedDisc = r.data )
       }
     }
   },

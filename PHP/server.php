@@ -6,8 +6,16 @@
     //trasformiamo la stringa in un array associativo comprensibile da PHP e lo assegniamo alla variabile $discs (diventerà un array associativo contenente tutti i valori del json)
     $discs = json_decode($string, true);
 
+    
     //permette di cambiare il tipo del contenuto interpretato dal browser rendendolo a tutti gli effetti un file json
     header('Content-Type: application/json');
 
-    // restituisce in modo corretto l'array
-    echo json_encode($discs);
+    // restituisce un array diverso in base ai parametri passati durante la chiamata
+    if(isset($_GET['discIndex'])){
+        echo json_encode($discs[$_GET['discIndex']]);
+    }else{
+        echo json_encode($discs);
+    }
+
+
+    
