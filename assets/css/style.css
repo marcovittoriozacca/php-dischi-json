@@ -1,0 +1,23 @@
+header {
+    background-color: #06121e;
+}
+
+main{
+    background-color: #1d2d3c;
+    height: calc( 100vh - 73px );
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+.custom-card-bg{
+    background-color: #102030;
+}
+.my-max-w{
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.custom-x-padding{
+    padding-inline: 100px;
+}
