@@ -3,7 +3,7 @@
         <div class="row">
             <div 
                 class="col-4 p-4"
-                v-for="(disc, index) in discs" :key="index"
+                v-for="(disc, index) in discs" :key="disc.id"
             >
                 <div class="card custom-card-bg px-5 cursor-pointer" @click="getSingleDisc(index)">
                     <figure>
