@@ -15,61 +15,11 @@
     
     <div id="app">
         <div id="web-app" class="vh-100">
-            <header>
-                <nav class="py-3 container">
-                    <figure class="m-0">
-                        <img width="40" src="./assets/img/spotify-logo.svg" alt="spotify-logo">
-                    </figure>
-                </nav>
-            </header>
 
-            <main class="overflow-y-auto py-5">
-
-                <div class="container custom-x-padding">
-                    <div class="row">
-                        <div 
-                            class="col-4 p-4"
-                            v-for="(disc, index) in discs" :key="index"
-                        >
-                            <div class="card custom-card-bg px-5 cursor-pointer" @click="getSingleDisc(index)">
-                                <figure>
-                                    <img class="card-img-top pt-4 img-fluid" :src="disc.poster" :alt="disc.title"/>
-                                </figure>
-                                <div class="card-body  text-center">
-                                    <h4 class="card-title fw-bolder">{{disc.title}}</h4>
-                                    <h6 class="card-text fw-light">{{disc.author}}</h6>
-                                    <p class="card-text fw-bolder">{{disc.year}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- modal with the selected disc infos -->
-                <div v-if="clicked" class=" position-absolute z-2 top-0 vh-100 vw-100 p-4">
-                    
-                    <div class="custom-card-bg-modal h-100 p-2 rounded-2">
-                        <button type="button" class="btn float-end"  @click="clicked = false">
-                            <i class="fas fa-xmark h2"></i>
-                        </button>
-                        <div class="h-100 d-flex justify-content-center align-items-center">
-
-                            <div class="card bg-transparent border border-0">
-                                <figure class="modal-figure">
-                                    <img class="card-img-top" :src="selectedDisc.poster" :alt="selectedDisc.title"/>
-                                </figure>
-                                <div class="card-body  text-center">
-                                    <h4 class="card-title fw-bolder">{{selectedDisc.title}}</h4>
-                                    <h6 class="card-text fw-light">{{selectedDisc.author}}</h6>
-                                    <p class="card-text fw-bolder">{{selectedDisc.year}}</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </main>
+        <!-- header -->
+        <?php include_once __DIR__ . '/PHP/components/header.php' ?>
+        <!-- main -->
+        <?php include_once __DIR__ . '/PHP/components/main.php' ?>
 
         </div>
     </div>
